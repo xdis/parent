@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyxy.common.mapper.ArbitratorAcceptStatusMapper">
+	<select id="queryAcceptStatus" resultType="com.zyxy.common.vo.ArbitratorAcceptStatusVO">
+		SELECT 
+			accept_status acceptStatus
+		FROM
+			arbitrator_info
+		WHERE
+			id=#{arbitratorId,jdbcType=VARCHAR}
+	</select>
+	
+	<update id="updateAcceptStatus" parameterType="com.zyxy.common.dto.ArbitratorAcceptStatusDTO">
+		UPDATE
+			arbitrator_info
+		<set>
+			<if test="dto.acceptStatus != null">
+				accept_status = #{dto.acceptStatus,jdbcType=VARCHAR}
+			</if>
+		</set>
+		WHERE
+			id=#{dto.arbitratorId,jdbcType=VARCHAR}
+	</update>
+</mapper>

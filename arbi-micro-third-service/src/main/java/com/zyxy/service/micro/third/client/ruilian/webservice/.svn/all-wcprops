@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline
+END
+GeneratePayNoteVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/GeneratePayNoteVO.java
+END
+CancelReciptVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/CancelReciptVO.java
+END
+SearchReceiptRetVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/SearchReceiptRetVO.java
+END
+ExternalInterfaceWS.wsdl
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/ExternalInterfaceWS.wsdl
+END
+ChangeReceiptVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/ChangeReceiptVO.java
+END
+GeneratePayNoteRetVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/GeneratePayNoteRetVO.java
+END
+CancelReceiptStockVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/CancelReceiptStockVO.java
+END
+LogoutVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/LogoutVO.java
+END
+GenericVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/GenericVO.java
+END
+ExternalInterfaceWSServiceLocator.java
+K 25
+svn:wc:ra_dav:version-url
+V 175
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/ExternalInterfaceWSServiceLocator.java
+END
+SearchPayNoteRetVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/SearchPayNoteRetVO.java
+END
+CancelReciptRstVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/CancelReciptRstVO.java
+END
+GeneratePayNoteGTVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/GeneratePayNoteGTVO.java
+END
+GenericRetVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/GenericRetVO.java
+END
+GenerateReceiptIssueRetVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/GenerateReceiptIssueRetVO.java
+END
+SendReceiptInfoRetVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/SendReceiptInfoRetVO.java
+END
+CancelPayNoteRetVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/CancelPayNoteRetVO.java
+END
+GeneratePayNoteCGVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/GeneratePayNoteCGVO.java
+END
+SearchPayNoteVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/SearchPayNoteVO.java
+END
+BaseWssVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/BaseWssVO.java
+END
+LoginVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/LoginVO.java
+END
+GenerateReceiptStockVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/GenerateReceiptStockVO.java
+END
+ExternalInterfaceWS_PortType.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/ExternalInterfaceWS_PortType.java
+END
+PayNoteVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/PayNoteVO.java
+END
+GenerateReceiptIssueVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/GenerateReceiptIssueVO.java
+END
+CancelReceiptStockRetVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/CancelReceiptStockRetVO.java
+END
+SendReceiptInfoVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/SendReceiptInfoVO.java
+END
+LoginRetVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/LoginRetVO.java
+END
+ShiXianGfmisClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/ShiXianGfmisClient.java
+END
+LogoutRetVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/LogoutRetVO.java
+END
+ExternalInterfaceWSSoapBindingStub.java
+K 25
+svn:wc:ra_dav:version-url
+V 176
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/ExternalInterfaceWSSoapBindingStub.java
+END
+GenerateReceiptStockRetVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/GenerateReceiptStockRetVO.java
+END
+GeneratePenaltyPNVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/GeneratePenaltyPNVO.java
+END
+CancelPayNoteVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/CancelPayNoteVO.java
+END
+ChangeReciptRstVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/ChangeReciptRstVO.java
+END
+GenerateReceiptIssueSubVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/GenerateReceiptIssueSubVO.java
+END
+ExternalInterfaceWSService.java
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/PRODUCTS/!svn/ver/3671/NTS/GUANGDONG_SHIXIAN/1_SRC/2_TRUNKS/MAIN/product/logics/src/com/todaytech/gfmis/receipt/facade/shixiancline/ExternalInterfaceWSService.java
+END

@@ -1,0 +1,446 @@
+/*右侧内容区域头部样式*/
+.navbar-head a {
+    color: #fff;
+    padding: 10px 12px 11px;
+    height: 50px;
+}
+
+.navbar-header {
+    background: #fff;
+    color: #666666;
+}
+
+.navbar-header .head-title {
+    color: #666666;
+    height: 50px;
+}
+
+.navbar-header .login-state{
+	padding: 14px 15px;
+}
+
+.navbar-header .login-state .hfqfont {
+    color: #949bab;
+}
+
+.navbar-header .exit-btn {
+    background: #fff;
+    height: 50px;
+    width: 50px;
+}
+
+.navbar-header .exit-btn a {
+    color: #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-header .exit-btn a .hfq-tuichu{
+    font-size: 30px;
+}
+.navbar-header .exit-btn a:hover {
+    background-color: #ff3b4a;
+    color: #fff;
+}
+
+/*表格样式按钮公共样式*/
+.ibox-content table tr {
+	height: 50px !important;
+	transition: all .5s;
+}
+.ibox-content .operation-td span {
+	color: transparent;
+    border: 1px solid transparent;
+}
+.ibox-content .operation-td span .hfqfont {
+    color: transparent;
+}
+
+.ibox-content .operation-td .revise-btn .hfqfont{
+    color: #16d1ba;
+}
+.ibox-content .operation-td .revise-btn:hover {
+    border: 1px solid #16d1ba;
+    color: #16d1ba;
+}
+.ibox-content .operation-td .delete-btn {
+    border: 1px solid transparent;
+    color: transparent;
+}
+.ibox-content .operation-td .delete-btn .hfqfont {
+    color: #ffa1a1;
+}
+.ibox-content .operation-td .delete-btn:hover {
+    border: 1px solid #ffa1a1;
+    color: #ffa1a1;
+}
+.ibox-content .operation-td .authorize {
+    color: transparent;
+    border:1px solid transparent;
+}
+.ibox-content .operation-td .authorize .hfqfont {
+    color: #ffa1a1;
+    padding: 7px 0;
+}
+.ibox-content .operation-td .authorize:hover {
+    color: #ffa1a1;
+    border:1px solid #ffa1a1;
+}
+
+.ibox-content .operation-td .authorize-btn {
+    border-color: transparent;
+    color: #a0acf5;
+}
+.ibox-content .operation-td .authorize-btn:hover {
+    border-color: #a0acf5;
+}
+
+.ibox-content .operation-td .reset-btn {
+    border-color: transparent;
+    color: #a0acf5;
+}
+.ibox-content .operation-td .reset-btn:hover {
+    border-color: #a0acf5;
+}
+.ibox-content .operation-td .detail-btn {
+    border-color: transparent;
+    color: #a0acf5;
+}
+.ibox-content .operation-td .detail-btn:hover {
+    border-color: #a0acf5;
+}
+.skin table tbody tr .operation-td span.authorize{
+    color: transparent;
+    border:1px solid transparent;
+}
+.skin table tbody tr .operation-td span.authorize:hover{
+    color: #ff4343;
+    border:1px solid #ff4343;
+}
+
+
+/*皮肤一*/
+.navbar-static-side {
+	width: 210px;
+}
+.skin .head-title i {
+    color: #fff;
+    background: #ff685d;
+    display: block;
+    font-weight: normal;
+    height: 24px;
+    width: 28px;
+    text-align: center;
+    line-height: 26px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.head-title i {
+    color: #fff;
+    background: #ff685d;
+    display: block;
+    font-weight: normal;
+    height: 24px;
+    width: 28px;
+    text-align: center;
+    line-height: 26px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+#side-menu {
+    background: transparent;
+}
+
+.navbar-minimalize {
+    color: #fff;
+}
+
+.navbar-default {
+	background: #186d91;
+    background: -webkit-linear-gradient(top, #186d91, #3da1cd);
+    background: -o-linear-gradient(top, #186d91, #3da1cd);
+    background: -moz-linear-gradient(top, #186d91, #3da1cd);
+    background: linear-gradient(top, #186d91, #3da1cd);
+}
+
+.navbar-default .navbar-head {
+	height: 50px;
+}
+
+.navbar-default .navbar-head a {
+    background: #fff;
+    color: #333;
+    padding-left: 22px;
+    line-height: 28px;
+}
+.navbar-default .navbar-head a .hfqfont {
+	line-height: inherit;
+}
+.mini-navbar .navbar-default .navbar-head a {
+	padding-left: 11px;
+	line-height: 20px;
+}
+.mini-navbar .navbar-default .navbar-head a .hfqfont {
+	line-height: inherit;
+	font-size: 30px;
+}
+
+.navbar-default .navbar-head li a .nav-label {
+    width: auto;
+    height: auto;
+    clear: inherit;
+}
+
+.navbar-default .navbar-head .hfqfont {
+    color: #b2b2b2;
+}
+
+.navbar-default .sidebar-collapse {
+	top: 50px;
+}
+.navbar-default .nav > li {
+	-webkit-transition: border 0s;
+	-moz-transition: border 0s;
+	-ms-transition: border 0s;
+	-o-transition: border 0s;
+	transition: border 0s;
+}
+.navbar-default .nav > li.active {
+    border-left: 2px solid #ff796f;
+}
+.navbar-default .nav > li > .nav > li {
+    border: none;
+}
+.mini-navbar .navbar-default .nav > li.active {
+    border-left: none;
+}
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus {
+    background-color: #15658e;
+    color: #fff;
+}
+
+.nav > li.active {
+    background: #15658e;
+}
+
+.nav > li > a {
+    color: #fff;
+    font-size: 14px;
+    padding: 13px 12px 13px 19px;
+    line-height: 20px;
+    height: 46px;
+}
+
+.nav > li.active > a {
+	color: #80d9ff;
+}
+
+#side-menu > li.active > a {
+	color: #fff;
+}
+
+.nav-second-level {
+    background: #15658e;
+}
+.mini-navbar .nav-second-level {
+	border: none;
+}
+.nav-second-level > li {
+    padding-left: 35px;
+}
+.nav-second-level.showMenu li{
+    display: none;
+}
+.nav-second-level  li  a {
+    padding-left: 6px;
+}
+.nav-second-level  li  a:hover,
+.nav-second-level  li  a:focus,.nav-second-level  li  a:active{
+	color: #80d9ff !important;
+}
+.nav-second-level > li.active > a {
+    padding-left: 6px;
+}
+
+.nav-third-level {
+    background: #15658e;
+}
+.nav-third-level li {
+    padding-left: 4px;
+}
+.nav-third-level li a {
+	height: 46px;
+	padding-left: 6px;
+}
+.nav-third-level li.active a {
+	height: 46px;
+	padding-left: 6px;
+}
+
+.nav-forth-level {
+    background: #15658e;
+}
+
+
+.mini-navbar .navbar-static-side {
+	width: 56px !important;
+}
+
+.mini-navbar .sidebar-collapse > .nav > li > a{
+	height: 60px;
+}
+
+.mini-navbar .nav-second-level {
+	left: 56px !important;
+	width: 117px !important;
+}
+.mini-navbar .nav-second-level li {
+    padding: 0;
+}
+.mini-navbar .nav-second-level li a {
+    padding-left: 20px !important;
+    font-size: 14px !important;
+}
+
+.mini-navbar li.active .nav-second-level {
+	left: 56px !important;
+}
+
+.mini-navbar .nav li a {
+	padding: 7px 14px;
+	line-height: 50px;
+}
+
+.mini-navbar .navbar-default .navbar-head a {
+    background: #f5462e;
+}
+
+.mini-navbar .navbar-default .navbar-head a .hfqfont {
+    color: #fff;
+}
+
+.mini-navbar ul#side-menu.nav > li.active {
+    background: #004f7d;
+}
+
+.mini-navbar .sidebar-collapse > .nav > li > a:hover, .mini-navbar .sidebar-collapse > .nav > li > a:focus {
+    background: #004f7d;
+}
+
+.mini-navbar .nav-second-level {
+    background: rgba(8, 98, 137, .9);
+}
+
+.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
+    color: #b7e9ff;
+}
+
+.mini-navbar .navbar-default .nav > li > .nav-second-level li.active a, 
+.mini-navbar .navbar-default .nav > li > .nav-second-level > li  a:focus {
+    background: #004f7d;
+    color: #fff;
+}
+.mini-navbar .navbar-default .nav > li > .nav-second-level > li > a:hover {
+    color: #c9f7ff;
+}
+
+.mini-navbar .sidebar-collapse > .nav > li > .nav-second-level > li > .nav-third-level > li > a {
+    color: #b7e9ff;
+}
+
+.mini-navbar .sidebar-collapse > .nav > li > .nav-second-level > li > .nav-third-level > li.active > a, 
+.mini-navbar .navbar-default .nav > li > .nav-second-level > li > .nav-third-level > li  a:focus {
+    color: #fff;
+}
+.mini-navbar .navbar-default .nav > li > .nav-second-level > li > .nav-third-level > li > a:hover {
+    color: #c9f7ff;
+}
+
+.mini-navbar .sidebar-collapse > .nav > li > .nav-second-level > li > .nav-third-level > li > .nav-forth-level > li > a {
+    color: #b7e9ff;
+}
+
+.mini-navbar .sidebar-collapse > .nav > li > .nav-second-level > li > .nav-third-level > li > .nav-forth-level > li.active > a {
+    color: #fff;
+}
+.mini-navbar .navbar-default .nav > li > .nav-second-level > li > .nav-third-level > li > .nav-forth-level > li > a:hover, 
+.mini-navbar .navbar-default .nav > li > .nav-second-level > li > .nav-third-level > li > .nav-forth-level > li  a:focus {
+    color: #c9f7ff;
+}
+
+.mini-navbar .sidebar-collapse .nav li .skin-showNum {
+    display: block;
+}
+
+body.mini-navbar #page-wrapper {
+	margin-left: 56px;
+}
+
+/*两套皮肤公共样式*/
+table tbody tr:nth-of-type(1){
+    background-color: #e6f2f8 !important;
+}
+.head-title i {
+    color: #fff;
+    background: #ff685d;
+    display: block;
+    font-weight: normal;
+    height: 24px;
+    width: 28px;
+    text-align: center;
+    line-height: 26px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.skin-showNum {
+    display: block;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    right: -1px;
+    top: -3px;
+    background: #eb6755;
+    line-height: 13px;
+    text-align: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    font-size: 10px;
+}
+.sidebar-collapse .nav li .skin-showNum {
+	display: none;
+}
+.mini-navbar .sidebar-collapse .nav li .skin-showNum {
+	display: block;
+}
+@media (min-width: 768px){
+	#page-wrapper {
+	    position: inherit;
+	    padding: 0 0 0 210px;
+	}
+}
+
+.color-333 {
+	color: #333 !important;
+	font-size: 36px !important;
+}
+.hfq-wechat1.color-333{
+    font-size: 60px !important;
+}
+.mini-navbar .color-333 {
+	display: none;
+}

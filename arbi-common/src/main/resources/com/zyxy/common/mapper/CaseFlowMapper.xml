@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyxy.common.mapper.CaseFlowMapper">
+    <select id="queryReplyExpireNotSelectArbitratorCase" resultType="String">
+        <![CDATA[
+
+            SELECT
+                c.case_id
+            FROM
+                case_reply_time_record c
+                LEFT JOIN compromise_apply ca
+                ON ca.case_id = c.case_id AND ca.status = ${@com.zyxy.common.enums.CompromiseStatusEnum@ONGOINF.getValue()},
+                case_info ci
+            WHERE
+                ci.id = c.case_id
+                AND ca.case_id IS NULL
+                AND ci.current_main_node = ${@com.zyxy.common.enums.CaseMainNodeEnum@CASE_REPLY.getCode()}
+                <!--排除和解中的案件-->
+                AND ca.case_id IS NULL
+                <!--超过答辩结束时间-->
+                AND c.end_time < now()
+                <!--排除审核中和已分配的案件-->
+                AND c.case_id NOT IN (
+                    SELECT
+                        case_id
+                    FROM
+                        case_arbitrator
+                    GROUP BY case_id
+                    UNION
+                    SELECT
+                        case_id
+                    FROM
+                        case_arbitrator_approve
+                    GROUP BY case_id
+                )
+
+        ]]>
+    </select>
+    <select id="queryReplyExpireCase" resultType="String">
+        <![CDATA[
+
+            SELECT
+                c.case_id
+            FROM
+                case_reply_time_record c
+                LEFT JOIN compromise_apply ca
+                ON ca.case_id = c.case_id AND ca.status = ${@com.zyxy.common.enums.CompromiseStatusEnum@ONGOINF.getValue()},
+                case_info ci,
+                case_arbitrator car
+            WHERE
+                ci.id = c.case_id
+                AND ca.case_id IS NULL
+                AND ci.current_main_node = ${@com.zyxy.common.enums.CaseMainNodeEnum@CASE_REPLY.getCode()}
+                AND car.case_id = ci.ID
+                <!--筛选已经出分配仲裁员的-->
+                AND car.status = ${@com.zyxy.common.enums.CaseArbitratorStatusEnum@OK.getCode()}
+                <!--排除和解中的案件-->
+                AND ca.case_id IS NULL
+                <!--超过答辩结束时间-->
+                AND c.end_time < now()
+
+        ]]>
+    </select>
+    <select id="queryPayExpireCase" resultType="String">
+        <![CDATA[
+
+            SELECT
+              c.id
+            FROM
+              case_info c,
+              case_node_oper o
+            WHERE
+              o.case_id = c.id
+              AND o.node_id = ${@com.zyxy.common.enums.CaseMainNodeEnum@CASE_PAY.getCode()}
+              AND o.plan_end_time < now()
+
+        ]]>
+    </select>
+    <select id="queryOffsetExpireCase" resultType="String">
+        <![CDATA[
+
+            SELECT
+              c.id
+            FROM
+              case_info c,
+              case_node_oper o
+            WHERE
+              o.case_id = c.id
+              AND o.node_id = ${@com.zyxy.common.enums.CaseMainNodeEnum@CASE_OFFSET.getCode()}
+              AND o.plan_end_time < now()
+
+        ]]>
+    </select>
+    <select id="queryReplyExpireNoticeCase" resultType="Map">
+        <![CDATA[
+
+            SELECT
+                c.case_id caseId,
+                u.phone
+            FROM
+                case_reply_time_record c
+                LEFT JOIN compromise_apply ca
+                ON ca.case_id = c.case_id AND ca.status = ${@com.zyxy.common.enums.CompromiseStatusEnum@ONGOINF.getValue()},
+                case_info ci,
+                case_arbitrator car,
+                user_info u
+            WHERE
+                ci.id = c.case_id
+                AND ci.current_main_node = ${@com.zyxy.common.enums.CaseMainNodeEnum@CASE_REPLY.getCode()}
+                AND car.case_id = ci.id
+                AND u.id = car.arbitrator_id
+                AND ca.case_id IS NULL
+                AND c.end_time < now()
+
+        ]]>
+    </select>
+    <select id="queryPayingCase" resultType="Map">
+        <![CDATA[
+
+            SELECT
+              c.id caseId,
+              r.pay_id payId
+            FROM
+              case_info c,
+              case_node_oper o,
+              case_request_info r
+            WHERE
+              o.case_id = c.id
+              AND o.node_id = ${@com.zyxy.common.enums.CaseMainNodeEnum@CASE_PAY.getCode()}
+              AND o.plan_end_time > now()
+              AND r.case_id = c.id
+              AND r.request_type = ${@com.zyxy.common.enums.RequestTypeEnum@REQUEST.getValue()}
+              AND r.pay_status = ${@com.zyxy.common.enums.PayStatusEnum@NOT_PAY.getValue()}
+
+        ]]>
+    </select>
+    <update id="compromiseStart">
+        <![CDATA[
+
+
+            UPDATE
+                compromise_apply
+            SET
+                STATUS = 1
+            WHERE
+                ID IN (
+                    SELECT
+                        id
+                    FROM
+                        (
+                            SELECT
+                                id
+                            FROM
+                                compromise_apply
+                            WHERE
+                                status = ${@com.zyxy.common.enums.CompromiseStatusEnum@WAIT_START.getValue()}
+                                AND start_time < now()
+                        )
+                )
+
+
+        ]]>
+    </update>
+
+    <select id="queryBeRequestPayingCase" resultType="Map">
+        <![CDATA[
+
+
+            SELECT
+              c.id caseId,
+              r.id requestId,
+              r.pay_id payId
+            FROM
+              case_info c,
+              case_request_info r
+            WHERE
+              r.pay_end_time > now()
+              AND r.case_id = c.id
+              AND r.request_type = ${@com.zyxy.common.enums.RequestTypeEnum@BACK_REQUEST.getValue()}
+              AND r.pay_status = ${@com.zyxy.common.enums.PayStatusEnum@NOT_PAY.getValue()}
+
+
+        ]]>
+    </select>
+    <select id="queryBeRequestExpireCase" resultType="Map">
+        <![CDATA[
+
+
+            SELECT
+              c.id caseId,
+              r.id requestId,
+              r.pay_id payId
+            FROM
+              case_info c,
+              case_request_info r
+            WHERE
+              r.pay_end_time <= now()
+              AND r.case_id = c.id
+              AND r.status = ${@com.zyxy.common.enums.CaseRequestInfoStatusEnum@NORMAL.getValue()}
+              AND r.request_type = ${@com.zyxy.common.enums.RequestTypeEnum@BACK_REQUEST.getValue()}
+              AND r.pay_status = ${@com.zyxy.common.enums.PayStatusEnum@NOT_PAY.getValue()}
+
+
+        ]]>
+    </select>
+    <select id="queryCompromiseOverCase" resultType="string">
+        <![CDATA[
+
+            SELECT
+                case_id
+            FROM
+                compromise_apply
+            WHERE
+                status = ${@com.zyxy.common.enums.CompromiseStatusEnum@ONGOINF.getValue()}
+                AND plan_end_time <= now()
+
+        ]]>
+    </select>
+
+
+    <select id="queryChangeRequestPayingCase" resultType="Map">
+        <![CDATA[
+
+            SELECT
+                ccr.id,
+                ccr.counterclaim_flag requestType,
+                ccr.case_id caseId,
+                ccr.pay_id payId
+            FROM
+                case_change_record ccr
+            WHERE
+                ccr.pay_end_time > now()
+                AND ccr.status = '3'
+
+        ]]>
+    </select>
+    <select id="queryChangeRequestExpireCase" resultType="Map">
+        <![CDATA[
+
+            SELECT
+                ccr.id,
+                ccr.counterclaim_flag requestType,
+                ccr.case_id caseId,
+                ccr.pay_id payId
+            FROM
+                case_change_record ccr
+            WHERE
+                ccr.pay_end_time <= now()
+                AND ccr.status = '3'
+
+        ]]>
+    </select>
+</mapper>

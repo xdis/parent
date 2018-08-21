@@ -1,0 +1,1284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://face.webservices.gfmis.todaytech.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://face.webservices.gfmis.todaytech.com" xmlns:intf="http://face.webservices.gfmis.todaytech.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://vo.webservices.gfmis.todaytech.com" xmlns:tns2="http://common.webservices.gfmis.todaytech.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema targetNamespace="http://face.webservices.gfmis.todaytech.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://common.webservices.gfmis.todaytech.com"/>
+   <import namespace="http://vo.webservices.gfmis.todaytech.com"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="ArrayOf_xsd_string">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOf_tns1_GenerateReceiptIssueSubVO">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:GenerateReceiptIssueSubVO[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+  </schema>
+  <schema targetNamespace="http://vo.webservices.gfmis.todaytech.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://common.webservices.gfmis.todaytech.com"/>
+   <import namespace="http://face.webservices.gfmis.todaytech.com"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="LogoutVO">
+    <sequence>
+     <element name="loginKey" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="LogoutRetVO">
+    <sequence>
+     <element name="reason" nillable="true" type="xsd:string"/>
+     <element name="returnCode" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="LoginVO">
+    <sequence>
+     <element name="password" nillable="true" type="xsd:string"/>
+     <element name="unitNO" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="LoginRetVO">
+    <sequence>
+     <element name="loginKey" nillable="true" type="xsd:string"/>
+     <element name="reason" nillable="true" type="xsd:string"/>
+     <element name="returnCode" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="GeneratePayNoteVO">
+    <complexContent>
+     <extension base="tns2:GenericVO">
+      <sequence>
+       <element name="chargeItemCount" type="xsd:int"/>
+       <element name="chargeItemNO1" nillable="true" type="xsd:string"/>
+       <element name="chargeItemNO2" nillable="true" type="xsd:string"/>
+       <element name="chargeItemNO3" nillable="true" type="xsd:string"/>
+       <element name="checkDigitAll" nillable="true" type="xsd:string"/>
+       <element name="checkDigitNO" nillable="true" type="xsd:string"/>
+       <element name="createTM" nillable="true" type="xsd:string"/>
+       <element name="overdueAmt1" nillable="true" type="xsd:string"/>
+       <element name="overdueAmt2" nillable="true" type="xsd:string"/>
+       <element name="overdueAmt3" nillable="true" type="xsd:string"/>
+       <element name="overdueDT" nillable="true" type="xsd:string"/>
+       <element name="payerName" nillable="true" type="xsd:string"/>
+       <element name="pnNO" nillable="true" type="xsd:string"/>
+       <element name="price1" nillable="true" type="xsd:string"/>
+       <element name="price2" nillable="true" type="xsd:string"/>
+       <element name="price3" nillable="true" type="xsd:string"/>
+       <element name="quantity1" nillable="true" type="xsd:string"/>
+       <element name="quantity2" nillable="true" type="xsd:string"/>
+       <element name="quantity3" nillable="true" type="xsd:string"/>
+       <element name="receivableAmt" nillable="true" type="xsd:string"/>
+       <element name="relateUserName" nillable="true" type="xsd:string"/>
+       <element name="remark" nillable="true" type="xsd:string"/>
+       <element name="unitNO" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="GeneratePenaltyPNVO">
+    <complexContent>
+     <extension base="tns1:GeneratePayNoteVO">
+      <sequence>
+       <element name="additionalAmount" nillable="true" type="xsd:string"/>
+       <element name="additionalReason" nillable="true" type="xsd:string"/>
+       <element name="penaltyBookNo" nillable="true" type="xsd:string"/>
+       <element name="penaltyReason" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="GeneratePayNoteRetVO">
+    <complexContent>
+     <extension base="tns2:GenericRetVO">
+      <sequence>
+       <element name="pnNO" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="GeneratePayNoteCGVO">
+    <sequence>
+     <element name="chargeItemCount" type="xsd:int"/>
+     <element name="chargeItemNO1" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO2" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO3" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO4" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO5" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO6" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO7" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO8" nillable="true" type="xsd:string"/>
+     <element name="checkDigitAll" nillable="true" type="xsd:string"/>
+     <element name="checkDigitNO" nillable="true" type="xsd:string"/>
+     <element name="createTM" nillable="true" type="xsd:string"/>
+     <element name="loginKey" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt1" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt2" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt3" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt4" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt5" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt6" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt7" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt8" nillable="true" type="xsd:string"/>
+     <element name="overdueDT" nillable="true" type="xsd:string"/>
+     <element name="payerName" nillable="true" type="xsd:string"/>
+     <element name="pnNO" nillable="true" type="xsd:string"/>
+     <element name="price1" nillable="true" type="xsd:string"/>
+     <element name="price2" nillable="true" type="xsd:string"/>
+     <element name="price3" nillable="true" type="xsd:string"/>
+     <element name="price4" nillable="true" type="xsd:string"/>
+     <element name="price5" nillable="true" type="xsd:string"/>
+     <element name="price6" nillable="true" type="xsd:string"/>
+     <element name="price7" nillable="true" type="xsd:string"/>
+     <element name="price8" nillable="true" type="xsd:string"/>
+     <element name="quantity1" nillable="true" type="xsd:string"/>
+     <element name="quantity2" nillable="true" type="xsd:string"/>
+     <element name="quantity3" nillable="true" type="xsd:string"/>
+     <element name="quantity4" nillable="true" type="xsd:string"/>
+     <element name="quantity5" nillable="true" type="xsd:string"/>
+     <element name="quantity6" nillable="true" type="xsd:string"/>
+     <element name="quantity7" nillable="true" type="xsd:string"/>
+     <element name="quantity8" nillable="true" type="xsd:string"/>
+     <element name="receivableAmt" nillable="true" type="xsd:string"/>
+     <element name="relateUserName" nillable="true" type="xsd:string"/>
+     <element name="remark" nillable="true" type="xsd:string"/>
+     <element name="unitNO" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="GeneratePayNoteGTVO">
+    <sequence>
+     <element name="chargeItemCount" type="xsd:int"/>
+     <element name="chargeItemNO1" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO10" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO11" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO12" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO13" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO14" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO15" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO16" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO17" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO18" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO19" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO2" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO20" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO21" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO22" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO23" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO24" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO25" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO26" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO3" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO4" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO5" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO6" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO7" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO8" nillable="true" type="xsd:string"/>
+     <element name="chargeItemNO9" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType1" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType10" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType11" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType12" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType13" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType14" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType15" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType16" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType17" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType18" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType19" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType2" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType20" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType21" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType22" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType23" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType24" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType25" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType26" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType3" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType4" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType5" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType6" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType7" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType8" nillable="true" type="xsd:string"/>
+     <element name="chargeItemType9" nillable="true" type="xsd:string"/>
+     <element name="checkDigitAll" nillable="true" type="xsd:string"/>
+     <element name="checkDigitNO" nillable="true" type="xsd:string"/>
+     <element name="createTM" nillable="true" type="xsd:string"/>
+     <element name="description" nillable="true" type="xsd:string"/>
+     <element name="loginKey" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt1" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt10" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt11" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt12" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt13" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt14" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt15" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt16" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt17" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt18" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt19" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt2" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt20" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt21" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt22" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt23" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt24" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt25" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt26" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt3" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt4" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt5" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt6" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt7" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt8" nillable="true" type="xsd:string"/>
+     <element name="overdueAmt9" nillable="true" type="xsd:string"/>
+     <element name="overdueDT" nillable="true" type="xsd:string"/>
+     <element name="payerName" nillable="true" type="xsd:string"/>
+     <element name="pnNO" nillable="true" type="xsd:string"/>
+     <element name="pnType" nillable="true" type="xsd:string"/>
+     <element name="price1" nillable="true" type="xsd:string"/>
+     <element name="price10" nillable="true" type="xsd:string"/>
+     <element name="price11" nillable="true" type="xsd:string"/>
+     <element name="price12" nillable="true" type="xsd:string"/>
+     <element name="price13" nillable="true" type="xsd:string"/>
+     <element name="price14" nillable="true" type="xsd:string"/>
+     <element name="price15" nillable="true" type="xsd:string"/>
+     <element name="price16" nillable="true" type="xsd:string"/>
+     <element name="price17" nillable="true" type="xsd:string"/>
+     <element name="price18" nillable="true" type="xsd:string"/>
+     <element name="price19" nillable="true" type="xsd:string"/>
+     <element name="price2" nillable="true" type="xsd:string"/>
+     <element name="price20" nillable="true" type="xsd:string"/>
+     <element name="price21" nillable="true" type="xsd:string"/>
+     <element name="price22" nillable="true" type="xsd:string"/>
+     <element name="price23" nillable="true" type="xsd:string"/>
+     <element name="price24" nillable="true" type="xsd:string"/>
+     <element name="price25" nillable="true" type="xsd:string"/>
+     <element name="price26" nillable="true" type="xsd:string"/>
+     <element name="price3" nillable="true" type="xsd:string"/>
+     <element name="price4" nillable="true" type="xsd:string"/>
+     <element name="price5" nillable="true" type="xsd:string"/>
+     <element name="price6" nillable="true" type="xsd:string"/>
+     <element name="price7" nillable="true" type="xsd:string"/>
+     <element name="price8" nillable="true" type="xsd:string"/>
+     <element name="price9" nillable="true" type="xsd:string"/>
+     <element name="quantity1" nillable="true" type="xsd:string"/>
+     <element name="quantity10" nillable="true" type="xsd:string"/>
+     <element name="quantity11" nillable="true" type="xsd:string"/>
+     <element name="quantity12" nillable="true" type="xsd:string"/>
+     <element name="quantity13" nillable="true" type="xsd:string"/>
+     <element name="quantity14" nillable="true" type="xsd:string"/>
+     <element name="quantity15" nillable="true" type="xsd:string"/>
+     <element name="quantity16" nillable="true" type="xsd:string"/>
+     <element name="quantity17" nillable="true" type="xsd:string"/>
+     <element name="quantity18" nillable="true" type="xsd:string"/>
+     <element name="quantity19" nillable="true" type="xsd:string"/>
+     <element name="quantity2" nillable="true" type="xsd:string"/>
+     <element name="quantity20" nillable="true" type="xsd:string"/>
+     <element name="quantity21" nillable="true" type="xsd:string"/>
+     <element name="quantity22" nillable="true" type="xsd:string"/>
+     <element name="quantity23" nillable="true" type="xsd:string"/>
+     <element name="quantity24" nillable="true" type="xsd:string"/>
+     <element name="quantity25" nillable="true" type="xsd:string"/>
+     <element name="quantity26" nillable="true" type="xsd:string"/>
+     <element name="quantity3" nillable="true" type="xsd:string"/>
+     <element name="quantity4" nillable="true" type="xsd:string"/>
+     <element name="quantity5" nillable="true" type="xsd:string"/>
+     <element name="quantity6" nillable="true" type="xsd:string"/>
+     <element name="quantity7" nillable="true" type="xsd:string"/>
+     <element name="quantity8" nillable="true" type="xsd:string"/>
+     <element name="quantity9" nillable="true" type="xsd:string"/>
+     <element name="receivableAmt" nillable="true" type="xsd:string"/>
+     <element name="relateUserName" nillable="true" type="xsd:string"/>
+     <element name="unitCount" type="xsd:int"/>
+     <element name="unitNO" nillable="true" type="xsd:string"/>
+     <element name="unitNO1" nillable="true" type="xsd:string"/>
+     <element name="unitNO10" nillable="true" type="xsd:string"/>
+     <element name="unitNO11" nillable="true" type="xsd:string"/>
+     <element name="unitNO12" nillable="true" type="xsd:string"/>
+     <element name="unitNO13" nillable="true" type="xsd:string"/>
+     <element name="unitNO14" nillable="true" type="xsd:string"/>
+     <element name="unitNO15" nillable="true" type="xsd:string"/>
+     <element name="unitNO16" nillable="true" type="xsd:string"/>
+     <element name="unitNO17" nillable="true" type="xsd:string"/>
+     <element name="unitNO18" nillable="true" type="xsd:string"/>
+     <element name="unitNO19" nillable="true" type="xsd:string"/>
+     <element name="unitNO2" nillable="true" type="xsd:string"/>
+     <element name="unitNO20" nillable="true" type="xsd:string"/>
+     <element name="unitNO21" nillable="true" type="xsd:string"/>
+     <element name="unitNO22" nillable="true" type="xsd:string"/>
+     <element name="unitNO23" nillable="true" type="xsd:string"/>
+     <element name="unitNO24" nillable="true" type="xsd:string"/>
+     <element name="unitNO25" nillable="true" type="xsd:string"/>
+     <element name="unitNO26" nillable="true" type="xsd:string"/>
+     <element name="unitNO3" nillable="true" type="xsd:string"/>
+     <element name="unitNO4" nillable="true" type="xsd:string"/>
+     <element name="unitNO5" nillable="true" type="xsd:string"/>
+     <element name="unitNO6" nillable="true" type="xsd:string"/>
+     <element name="unitNO7" nillable="true" type="xsd:string"/>
+     <element name="unitNO8" nillable="true" type="xsd:string"/>
+     <element name="unitNO9" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="CancelPayNoteVO">
+    <complexContent>
+     <extension base="tns2:GenericVO">
+      <sequence>
+       <element name="checkDigitNO" nillable="true" type="xsd:string"/>
+       <element name="pnNO" nillable="true" type="xsd:string"/>
+       <element name="reason" nillable="true" type="xsd:string"/>
+       <element name="unitNO" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="CancelPayNoteRetVO">
+    <complexContent>
+     <extension base="tns2:GenericRetVO">
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="SearchPayNoteVO">
+    <complexContent>
+     <extension base="tns2:GenericVO">
+      <sequence>
+       <element name="pnNO" nillable="true" type="xsd:string"/>
+       <element name="searchTm" nillable="true" type="xsd:string"/>
+       <element name="unitNO" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="SearchPayNoteRetVO">
+    <complexContent>
+     <extension base="tns2:GenericRetVO">
+      <sequence>
+       <element name="bankName" nillable="true" type="xsd:string"/>
+       <element name="paidTM" nillable="true" type="xsd:string"/>
+       <element name="payerName" nillable="true" type="xsd:string"/>
+       <element name="pnNO" nillable="true" type="xsd:string"/>
+       <element name="receiptNO" nillable="true" type="xsd:string"/>
+       <element name="receivableAmt" type="xsd:double"/>
+       <element name="receivedAmt" type="xsd:double"/>
+       <element name="rtNO" nillable="true" type="xsd:string"/>
+       <element name="status" type="xsd:int"/>
+       <element name="unitNO" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="CancelReceiptStockVO">
+    <complexContent>
+     <extension base="tns2:GenericVO">
+      <sequence>
+       <element name="endNO" nillable="true" type="xsd:string"/>
+       <element name="pieceCount" type="xsd:int"/>
+       <element name="procTM" nillable="true" type="xsd:string"/>
+       <element name="recedePrice" type="xsd:double"/>
+       <element name="receiverName" nillable="true" type="xsd:string"/>
+       <element name="rtNO" nillable="true" type="xsd:string"/>
+       <element name="startNO" nillable="true" type="xsd:string"/>
+       <element name="stockHouseName" nillable="true" type="xsd:string"/>
+       <element name="unitNO" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="CancelReceiptStockRetVO">
+    <complexContent>
+     <extension base="tns2:GenericRetVO">
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="GenerateReceiptStockVO">
+    <complexContent>
+     <extension base="tns2:GenericVO">
+      <sequence>
+       <element name="endNO" nillable="true" type="xsd:string"/>
+       <element name="needCost" type="xsd:int"/>
+       <element name="pieceCount" type="xsd:int"/>
+       <element name="procTM" nillable="true" type="xsd:string"/>
+       <element name="receiptCost" type="xsd:double"/>
+       <element name="receiverName" nillable="true" type="xsd:string"/>
+       <element name="rtNO" nillable="true" type="xsd:string"/>
+       <element name="startNO" nillable="true" type="xsd:string"/>
+       <element name="unitNO" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="GenerateReceiptStockRetVO">
+    <complexContent>
+     <extension base="tns2:GenericRetVO">
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="SendReceiptInfoVO">
+    <sequence>
+     <element name="bankNO" nillable="true" type="xsd:string"/>
+     <element name="cino" nillable="true" type="xsd:string"/>
+     <element name="endNO" nillable="true" type="xsd:string"/>
+     <element name="kpunitno" nillable="true" type="xsd:string"/>
+     <element name="loginKey" nillable="true" type="xsd:string"/>
+     <element name="payer" nillable="true" type="xsd:string"/>
+     <element name="proTM" nillable="true" type="xsd:string"/>
+     <element name="rtNO" nillable="true" type="xsd:string"/>
+     <element name="startNO" nillable="true" type="xsd:string"/>
+     <element name="status" type="xsd:int"/>
+     <element name="totalamt" type="xsd:double"/>
+     <element name="zsunitno" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="SendReceiptInfoRetVO">
+    <sequence>
+     <element name="reason" nillable="true" type="xsd:string"/>
+     <element name="returnCode" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="GenerateReceiptIssueSubVO">
+    <complexContent>
+     <extension base="tns2:GenericVO">
+      <sequence>
+       <element name="allPieces" type="xsd:int"/>
+       <element name="amountCost" type="xsd:double"/>
+       <element name="desUnitid" nillable="true" type="xsd:string"/>
+       <element name="disAmountCost" type="xsd:double"/>
+       <element name="discount" type="xsd:double"/>
+       <element name="endNo" nillable="true" type="xsd:string"/>
+       <element name="needConfirm" type="xsd:int"/>
+       <element name="packs" type="xsd:int"/>
+       <element name="procTM" nillable="true" type="xsd:string"/>
+       <element name="realPrice" type="xsd:double"/>
+       <element name="receiver" nillable="true" type="xsd:string"/>
+       <element name="rshid" type="xsd:int"/>
+       <element name="rtId" nillable="true" type="xsd:string"/>
+       <element name="startNo" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="GenerateReceiptIssueVO">
+    <complexContent>
+     <extension base="tns2:GenericVO">
+      <sequence>
+       <element name="desunitId" nillable="true" type="xsd:string"/>
+       <element name="listdtos" nillable="true" type="impl:ArrayOf_tns1_GenerateReceiptIssueSubVO"/>
+       <element name="noNeedPay" type="xsd:int"/>
+       <element name="opcode" type="xsd:int"/>
+       <element name="operatorId" type="xsd:int"/>
+       <element name="sumcost" type="xsd:double"/>
+       <element name="sumpieces" type="xsd:int"/>
+       <element name="unitId" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="GenerateReceiptIssueRetVO">
+    <complexContent>
+     <extension base="tns2:GenericRetVO">
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="PayNoteVO">
+    <sequence>
+     <element name="loginKey" nillable="true" type="xsd:string"/>
+     <element name="pnNO" nillable="true" type="xsd:string"/>
+     <element name="unitNO" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="SearchReceiptRetVO">
+    <sequence>
+     <element name="chargeItemCount" nillable="true" type="xsd:int"/>
+     <element name="chargeItemNOs" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="chargeItemNames" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="chargeUnits" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="discript" nillable="true" type="xsd:string"/>
+     <element name="extendInfoCount" nillable="true" type="xsd:int"/>
+     <element name="extendInfos" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="payerName" nillable="true" type="xsd:string"/>
+     <element name="pnNO" nillable="true" type="xsd:string"/>
+     <element name="prices" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="quantitys" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="reason" nillable="true" type="xsd:string"/>
+     <element name="receiptNO" nillable="true" type="xsd:string"/>
+     <element name="receiptType" nillable="true" type="xsd:string"/>
+     <element name="receivableAmt" nillable="true" type="xsd:string"/>
+     <element name="receivableDueAmt" nillable="true" type="xsd:string"/>
+     <element name="receiveAmts" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="returnCode" nillable="true" type="xsd:string"/>
+     <element name="unitNO" nillable="true" type="xsd:string"/>
+     <element name="unitName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ChangeReceiptVO">
+    <sequence>
+     <element name="changeResone" nillable="true" type="xsd:string"/>
+     <element name="loginKey" nillable="true" type="xsd:string"/>
+     <element name="newReceiptNO" nillable="true" type="xsd:string"/>
+     <element name="newReceiptType" nillable="true" type="xsd:string"/>
+     <element name="oldReceiptNO" nillable="true" type="xsd:string"/>
+     <element name="oldReceiptType" nillable="true" type="xsd:string"/>
+     <element name="pnNO" nillable="true" type="xsd:string"/>
+     <element name="unitNO" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ChangeReciptRstVO">
+    <sequence>
+     <element name="reason" nillable="true" type="xsd:string"/>
+     <element name="returnCode" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="CancelReciptVO">
+    <sequence>
+     <element name="cancelResone" nillable="true" type="xsd:string"/>
+     <element name="loginKey" nillable="true" type="xsd:string"/>
+     <element name="receiptNO" nillable="true" type="xsd:string"/>
+     <element name="receiptType" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="CancelReciptRstVO">
+    <sequence>
+     <element name="reason" nillable="true" type="xsd:string"/>
+     <element name="returnCode" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace="http://common.webservices.gfmis.todaytech.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://vo.webservices.gfmis.todaytech.com"/>
+   <import namespace="http://face.webservices.gfmis.todaytech.com"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="BaseWssVO">
+    <sequence>
+     <element name="tagName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="GenericVO">
+    <complexContent>
+     <extension base="tns2:BaseWssVO">
+      <sequence>
+       <element name="loginKey" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="GenericRetVO">
+    <complexContent>
+     <extension base="tns2:BaseWssVO">
+      <sequence>
+       <element name="reason" nillable="true" type="xsd:string"/>
+       <element name="returnCode" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="cancelReceiptStockRequest">
+
+      <wsdl:part name="crsvo" type="tns1:CancelReceiptStockVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="generatePayNoteGtRequest">
+
+      <wsdl:part name="gpngtvo" type="tns1:GeneratePayNoteGTVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="generatePayNoteRequest">
+
+      <wsdl:part name="gpnvo" type="tns1:GeneratePayNoteVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchPnnosRequest">
+
+      <wsdl:part name="spnvo" type="tns1:SearchPayNoteVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelPayNoteResponse">
+
+      <wsdl:part name="cancelPayNoteReturn" type="tns1:CancelPayNoteRetVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="changeReceiptByGtRequest">
+
+      <wsdl:part name="changeReceiptVO" type="tns1:ChangeReceiptVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="generatePayNoteCGRequest">
+
+      <wsdl:part name="gpnvo" type="tns1:GeneratePayNoteCGVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="receiptStockXmlRequest">
+
+      <wsdl:part name="xml" type="xsd:string"/>
+
+   </wsdl:message>
+    <wsdl:message name="receiptDisableXmlRequest">
+
+      <wsdl:part name="xml" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="generatePayNoteCGResponse">
+
+      <wsdl:part name="generatePayNoteCGReturn" type="tns1:GeneratePayNoteRetVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="generateReceiptIssueRequest">
+
+      <wsdl:part name="griv" type="tns1:GenerateReceiptIssueVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="generatePayNoteResponse">
+
+      <wsdl:part name="generatePayNoteReturn" type="tns1:GeneratePayNoteRetVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="LoginRequest">
+
+      <wsdl:part name="loginvo" type="tns1:LoginVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="generateReceiptIssueResponse">
+
+      <wsdl:part name="generateReceiptIssueReturn" type="tns1:GenerateReceiptIssueRetVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="generatePayNoteGtResponse">
+
+      <wsdl:part name="generatePayNoteGtReturn" type="tns1:GeneratePayNoteRetVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="generateReceiptStockRequest">
+
+      <wsdl:part name="grsvo" type="tns1:GenerateReceiptStockVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelReceiptByGtRequest">
+
+      <wsdl:part name="cancelReciptVO" type="tns1:CancelReciptVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchPayNoteResponse">
+
+      <wsdl:part name="searchPayNoteReturn" type="tns1:SearchPayNoteRetVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelReceiptByGtResponse">
+
+      <wsdl:part name="cancelReceiptByGtReturn" type="tns1:CancelReciptRstVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="printReceiptByGtResponse">
+
+      <wsdl:part name="printReceiptByGtReturn" type="tns1:SearchReceiptRetVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="receiptStockXmlResponse">
+
+      <wsdl:part name="receiptStockXmlReturn" type="xsd:string"/>
+
+   </wsdl:message>
+    <wsdl:message name="receiptDisableXmlResponse">
+
+      <wsdl:part name="receiptDisableXmlReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="mainRequest">
+
+      <wsdl:part name="args" type="impl:ArrayOf_xsd_string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="logoutResponse">
+
+      <wsdl:part name="logoutReturn" type="tns1:LogoutRetVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchPayNoteRequest">
+
+      <wsdl:part name="spnvo" type="tns1:SearchPayNoteVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelReceiptStockResponse">
+
+      <wsdl:part name="cancelReceiptStockReturn" type="tns1:CancelReceiptStockRetVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="changeReceiptByGtResponse">
+
+      <wsdl:part name="changeReceiptByGtReturn" type="tns1:ChangeReciptRstVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendReceiptInfoResponse">
+
+      <wsdl:part name="sendReceiptInfoReturn" type="tns1:SendReceiptInfoRetVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="printReceiptByGtRequest">
+
+      <wsdl:part name="payNoteVO" type="tns1:PayNoteVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="logoutRequest">
+
+      <wsdl:part name="lpvo" type="tns1:LogoutVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="generateReceiptStockResponse">
+
+      <wsdl:part name="generateReceiptStockReturn" type="tns1:GenerateReceiptStockRetVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendReceiptInfoRequest">
+
+      <wsdl:part name="srivo" type="tns1:SendReceiptInfoVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelPayNoteRequest">
+
+      <wsdl:part name="cpnvo" type="tns1:CancelPayNoteVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="LoginResponse">
+
+      <wsdl:part name="LoginReturn" type="tns1:LoginRetVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchPnnosResponse">
+
+      <wsdl:part name="searchPnnosReturn" type="tns1:SearchPayNoteRetVO"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="mainResponse">
+
+   </wsdl:message>
+
+   <wsdl:portType name="ExternalInterfaceWS">
+
+      <wsdl:operation name="main" parameterOrder="args">
+
+         <wsdl:input message="impl:mainRequest" name="mainRequest"/>
+
+         <wsdl:output message="impl:mainResponse" name="mainResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logout" parameterOrder="lpvo">
+
+         <wsdl:input message="impl:logoutRequest" name="logoutRequest"/>
+
+         <wsdl:output message="impl:logoutResponse" name="logoutResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="Login" parameterOrder="loginvo">
+
+         <wsdl:input message="impl:LoginRequest" name="LoginRequest"/>
+
+         <wsdl:output message="impl:LoginResponse" name="LoginResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="generatePayNote" parameterOrder="gpnvo">
+
+         <wsdl:input message="impl:generatePayNoteRequest" name="generatePayNoteRequest"/>
+
+         <wsdl:output message="impl:generatePayNoteResponse" name="generatePayNoteResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="generatePayNoteCG" parameterOrder="gpnvo">
+
+         <wsdl:input message="impl:generatePayNoteCGRequest" name="generatePayNoteCGRequest"/>
+
+         <wsdl:output message="impl:generatePayNoteCGResponse" name="generatePayNoteCGResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="generatePayNoteGt" parameterOrder="gpngtvo">
+
+         <wsdl:input message="impl:generatePayNoteGtRequest" name="generatePayNoteGtRequest"/>
+
+         <wsdl:output message="impl:generatePayNoteGtResponse" name="generatePayNoteGtResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelPayNote" parameterOrder="cpnvo">
+
+         <wsdl:input message="impl:cancelPayNoteRequest" name="cancelPayNoteRequest"/>
+
+         <wsdl:output message="impl:cancelPayNoteResponse" name="cancelPayNoteResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="searchPayNote" parameterOrder="spnvo">
+
+         <wsdl:input message="impl:searchPayNoteRequest" name="searchPayNoteRequest"/>
+
+         <wsdl:output message="impl:searchPayNoteResponse" name="searchPayNoteResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="searchPnnos" parameterOrder="spnvo">
+
+         <wsdl:input message="impl:searchPnnosRequest" name="searchPnnosRequest"/>
+
+         <wsdl:output message="impl:searchPnnosResponse" name="searchPnnosResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelReceiptStock" parameterOrder="crsvo">
+
+         <wsdl:input message="impl:cancelReceiptStockRequest" name="cancelReceiptStockRequest"/>
+
+         <wsdl:output message="impl:cancelReceiptStockResponse" name="cancelReceiptStockResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="generateReceiptStock" parameterOrder="grsvo">
+
+         <wsdl:input message="impl:generateReceiptStockRequest" name="generateReceiptStockRequest"/>
+
+         <wsdl:output message="impl:generateReceiptStockResponse" name="generateReceiptStockResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendReceiptInfo" parameterOrder="srivo">
+
+         <wsdl:input message="impl:sendReceiptInfoRequest" name="sendReceiptInfoRequest"/>
+
+         <wsdl:output message="impl:sendReceiptInfoResponse" name="sendReceiptInfoResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="generateReceiptIssue" parameterOrder="griv">
+
+         <wsdl:input message="impl:generateReceiptIssueRequest" name="generateReceiptIssueRequest"/>
+
+         <wsdl:output message="impl:generateReceiptIssueResponse" name="generateReceiptIssueResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="printReceiptByGt" parameterOrder="payNoteVO">
+
+         <wsdl:input message="impl:printReceiptByGtRequest" name="printReceiptByGtRequest"/>
+
+         <wsdl:output message="impl:printReceiptByGtResponse" name="printReceiptByGtResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changeReceiptByGt" parameterOrder="changeReceiptVO">
+
+         <wsdl:input message="impl:changeReceiptByGtRequest" name="changeReceiptByGtRequest"/>
+
+         <wsdl:output message="impl:changeReceiptByGtResponse" name="changeReceiptByGtResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelReceiptByGt" parameterOrder="cancelReciptVO">
+
+         <wsdl:input message="impl:cancelReceiptByGtRequest" name="cancelReceiptByGtRequest"/>
+
+         <wsdl:output message="impl:cancelReceiptByGtResponse" name="cancelReceiptByGtResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="receiptStockXml" parameterOrder="xml">
+
+         <wsdl:input message="impl:receiptStockXmlRequest" name="receiptStockXmlRequest"/>
+
+         <wsdl:output message="impl:receiptStockXmlResponse" name="receiptStockXmlResponse"/>
+
+      </wsdl:operation>
+  <wsdl:operation name="receiptDisableXml" parameterOrder="xml">
+
+         <wsdl:input message="impl:receiptDisableXmlRequest" name="receiptDisableXmlRequest"/>
+
+         <wsdl:output message="impl:receiptDisableXmlResponse" name="receiptDisableXmlResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ExternalInterfaceWSSoapBinding" type="impl:ExternalInterfaceWS">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="main">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="mainRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="mainResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logout">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="logoutRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="logoutResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="Login">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="LoginRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="LoginResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="generatePayNote">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="generatePayNoteRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="generatePayNoteResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="generatePayNoteCG">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="generatePayNoteCGRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="generatePayNoteCGResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="generatePayNoteGt">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="generatePayNoteGtRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="generatePayNoteGtResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelPayNote">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="cancelPayNoteRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="cancelPayNoteResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="searchPayNote">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="searchPayNoteRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="searchPayNoteResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="searchPnnos">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="searchPnnosRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="searchPnnosResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelReceiptStock">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="cancelReceiptStockRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="cancelReceiptStockResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="generateReceiptStock">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="generateReceiptStockRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="generateReceiptStockResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendReceiptInfo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sendReceiptInfoRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sendReceiptInfoResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="generateReceiptIssue">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="generateReceiptIssueRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="generateReceiptIssueResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="printReceiptByGt">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="printReceiptByGtRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="printReceiptByGtResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="changeReceiptByGt">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="changeReceiptByGtRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="changeReceiptByGtResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelReceiptByGt">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="cancelReceiptByGtRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="cancelReceiptByGtResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="receiptStockXml">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="receiptStockXmlRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="receiptStockXmlResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+       <wsdl:operation name="receiptDisableXml">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="receiptDisableXmlRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="receiptDisableXmlResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://face.webservices.gfmis.todaytech.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ExternalInterfaceWSService">
+
+      <wsdl:port binding="impl:ExternalInterfaceWSSoapBinding" name="ExternalInterfaceWS">
+
+         <wsdlsoap:address location="http://10.10.10.112:7003/ttfsws/services/ExternalInterfaceWS"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

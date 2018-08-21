@@ -1,0 +1,1187 @@
+/**
+ * ExternalInterfaceWSSoapBindingStub.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ */
+
+package com.todaytech.gfmis.receipt.facade.shixiancline;
+
+public class ExternalInterfaceWSSoapBindingStub extends org.apache.axis.client.Stub implements ExternalInterfaceWS_PortType {
+    private java.util.Vector cachedSerClasses = new java.util.Vector();
+    private java.util.Vector cachedSerQNames = new java.util.Vector();
+    private java.util.Vector cachedSerFactories = new java.util.Vector();
+    private java.util.Vector cachedDeserFactories = new java.util.Vector();
+
+    static org.apache.axis.description.OperationDesc [] _operations;
+
+    static {
+        _operations = new org.apache.axis.description.OperationDesc[20];
+        _initOperationDesc1();
+        _initOperationDesc2();
+    }
+
+    private static void _initOperationDesc1(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("main");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "args"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "ArrayOf_xsd_string"), java.lang.String[].class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(org.apache.axis.encoding.XMLType.AXIS_VOID);
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[0] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("logout");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "lpvo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "LogoutVO"), LogoutVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "LogoutRetVO"));
+        oper.setReturnClass(LogoutRetVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "logoutReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[1] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("Login");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "loginvo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "LoginVO"), LoginVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "LoginRetVO"));
+        oper.setReturnClass(LoginRetVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "LoginReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[2] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("generatePayNote");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gpnvo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GeneratePayNoteVO"), GeneratePayNoteVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GeneratePayNoteRetVO"));
+        oper.setReturnClass(GeneratePayNoteRetVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "generatePayNoteReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[3] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("generatePayNoteCG");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gpnvo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GeneratePayNoteCGVO"), GeneratePayNoteCGVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GeneratePayNoteRetVO"));
+        oper.setReturnClass(GeneratePayNoteRetVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "generatePayNoteCGReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[4] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("generatePayNoteGt");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "gpngtvo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GeneratePayNoteGTVO"), GeneratePayNoteGTVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GeneratePayNoteRetVO"));
+        oper.setReturnClass(GeneratePayNoteRetVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "generatePayNoteGtReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[5] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("cancelPayNote");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cpnvo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "CancelPayNoteVO"), CancelPayNoteVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "CancelPayNoteRetVO"));
+        oper.setReturnClass(CancelPayNoteRetVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "cancelPayNoteReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[6] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("searchPayNote");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "spnvo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "SearchPayNoteVO"), SearchPayNoteVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "SearchPayNoteRetVO"));
+        oper.setReturnClass(SearchPayNoteRetVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "searchPayNoteReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[7] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("searchPnnos");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "spnvo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "SearchPayNoteVO"), SearchPayNoteVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "SearchPayNoteRetVO"));
+        oper.setReturnClass(SearchPayNoteRetVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "searchPnnosReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[8] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("cancelReceiptStock");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "crsvo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "CancelReceiptStockVO"), CancelReceiptStockVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "CancelReceiptStockRetVO"));
+        oper.setReturnClass(CancelReceiptStockRetVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "cancelReceiptStockReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[9] = oper;
+
+    }
+
+    private static void _initOperationDesc2(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("generateReceiptStock");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "grsvo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GenerateReceiptStockVO"), GenerateReceiptStockVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GenerateReceiptStockRetVO"));
+        oper.setReturnClass(GenerateReceiptStockRetVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "generateReceiptStockReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[10] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("sendReceiptInfo");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "srivo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "SendReceiptInfoVO"), SendReceiptInfoVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "SendReceiptInfoRetVO"));
+        oper.setReturnClass(SendReceiptInfoRetVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "sendReceiptInfoReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[11] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("generateReceiptIssue");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "griv"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GenerateReceiptIssueVO"), GenerateReceiptIssueVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GenerateReceiptIssueRetVO"));
+        oper.setReturnClass(GenerateReceiptIssueRetVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "generateReceiptIssueReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[12] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("printReceiptByGt");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "payNoteVO"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "PayNoteVO"), PayNoteVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "SearchReceiptRetVO"));
+        oper.setReturnClass(SearchReceiptRetVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "printReceiptByGtReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[13] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("changeReceiptByGt");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "changeReceiptVO"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "ChangeReceiptVO"), ChangeReceiptVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "ChangeReciptRstVO"));
+        oper.setReturnClass(ChangeReciptRstVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "changeReceiptByGtReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[14] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("cancelReceiptByGt");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cancelReciptVO"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "CancelReciptVO"), CancelReciptVO.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "CancelReciptRstVO"));
+        oper.setReturnClass(CancelReciptRstVO.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "cancelReceiptByGtReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[15] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("receiptStockXml");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "xml"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "receiptStockXmlReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[16] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("receiptStockUserXml");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "xml"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "receiptStockUserXmlReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[17] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("receiptDisableXml");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "xml"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("", "receiptDisableXmlReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.RPC);
+        oper.setUse(org.apache.axis.constants.Use.ENCODED);
+        _operations[18] = oper;
+
+    }
+
+    public ExternalInterfaceWSSoapBindingStub() throws org.apache.axis.AxisFault {
+         this(null);
+    }
+
+    public ExternalInterfaceWSSoapBindingStub(java.net.URL endpointURL, javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+         this(service);
+         super.cachedEndpoint = endpointURL;
+    }
+
+    public ExternalInterfaceWSSoapBindingStub(javax.xml.rpc.Service service) throws org.apache.axis.AxisFault {
+        if (service == null) {
+            super.service = new org.apache.axis.client.Service();
+        } else {
+            super.service = service;
+        }
+        ((org.apache.axis.client.Service)super.service).setTypeMappingVersion("1.2");
+            java.lang.Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
+            qName = new javax.xml.namespace.QName("http://common.webservices.gfmis.todaytech.com", "BaseWssVO");
+            cachedSerQNames.add(qName);
+            cls = BaseWssVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://common.webservices.gfmis.todaytech.com", "GenericRetVO");
+            cachedSerQNames.add(qName);
+            cls = GenericRetVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://common.webservices.gfmis.todaytech.com", "GenericVO");
+            cachedSerQNames.add(qName);
+            cls = GenericVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "ArrayOf_tns1_GenerateReceiptIssueSubVO");
+            cachedSerQNames.add(qName);
+            cls = GenerateReceiptIssueSubVO[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GenerateReceiptIssueSubVO");
+            qName2 = null;
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
+            qName = new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "ArrayOf_xsd_string");
+            cachedSerQNames.add(qName);
+            cls = java.lang.String[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string");
+            qName2 = null;
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "CancelPayNoteRetVO");
+            cachedSerQNames.add(qName);
+            cls = CancelPayNoteRetVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "CancelPayNoteVO");
+            cachedSerQNames.add(qName);
+            cls = CancelPayNoteVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "CancelReceiptStockRetVO");
+            cachedSerQNames.add(qName);
+            cls = CancelReceiptStockRetVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "CancelReceiptStockVO");
+            cachedSerQNames.add(qName);
+            cls = CancelReceiptStockVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "CancelReciptRstVO");
+            cachedSerQNames.add(qName);
+            cls = CancelReciptRstVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "CancelReciptVO");
+            cachedSerQNames.add(qName);
+            cls = CancelReciptVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "ChangeReceiptVO");
+            cachedSerQNames.add(qName);
+            cls = ChangeReceiptVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "ChangeReciptRstVO");
+            cachedSerQNames.add(qName);
+            cls = ChangeReciptRstVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GeneratePayNoteCGVO");
+            cachedSerQNames.add(qName);
+            cls = GeneratePayNoteCGVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GeneratePayNoteGTVO");
+            cachedSerQNames.add(qName);
+            cls = GeneratePayNoteGTVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GeneratePayNoteRetVO");
+            cachedSerQNames.add(qName);
+            cls = GeneratePayNoteRetVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GeneratePayNoteVO");
+            cachedSerQNames.add(qName);
+            cls = GeneratePayNoteVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GeneratePenaltyPNVO");
+            cachedSerQNames.add(qName);
+            cls = GeneratePenaltyPNVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GenerateReceiptIssueRetVO");
+            cachedSerQNames.add(qName);
+            cls = GenerateReceiptIssueRetVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GenerateReceiptIssueSubVO");
+            cachedSerQNames.add(qName);
+            cls = GenerateReceiptIssueSubVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GenerateReceiptIssueVO");
+            cachedSerQNames.add(qName);
+            cls = GenerateReceiptIssueVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GenerateReceiptStockRetVO");
+            cachedSerQNames.add(qName);
+            cls = GenerateReceiptStockRetVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "GenerateReceiptStockVO");
+            cachedSerQNames.add(qName);
+            cls = GenerateReceiptStockVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "LoginRetVO");
+            cachedSerQNames.add(qName);
+            cls = LoginRetVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "LoginVO");
+            cachedSerQNames.add(qName);
+            cls = LoginVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "LogoutRetVO");
+            cachedSerQNames.add(qName);
+            cls = LogoutRetVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "LogoutVO");
+            cachedSerQNames.add(qName);
+            cls = LogoutVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "PayNoteVO");
+            cachedSerQNames.add(qName);
+            cls = PayNoteVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "SearchPayNoteRetVO");
+            cachedSerQNames.add(qName);
+            cls = SearchPayNoteRetVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "SearchPayNoteVO");
+            cachedSerQNames.add(qName);
+            cls = SearchPayNoteVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "SearchReceiptRetVO");
+            cachedSerQNames.add(qName);
+            cls = SearchReceiptRetVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "SendReceiptInfoRetVO");
+            cachedSerQNames.add(qName);
+            cls = SendReceiptInfoRetVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://vo.webservices.gfmis.todaytech.com", "SendReceiptInfoVO");
+            cachedSerQNames.add(qName);
+            cls = SendReceiptInfoVO.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+    }
+
+    protected org.apache.axis.client.Call createCall() throws java.rmi.RemoteException {
+        try {
+            org.apache.axis.client.Call _call = super._createCall();
+            if (super.maintainSessionSet) {
+                _call.setMaintainSession(super.maintainSession);
+            }
+            if (super.cachedUsername != null) {
+                _call.setUsername(super.cachedUsername);
+            }
+            if (super.cachedPassword != null) {
+                _call.setPassword(super.cachedPassword);
+            }
+            if (super.cachedEndpoint != null) {
+                _call.setTargetEndpointAddress(super.cachedEndpoint);
+            }
+            if (super.cachedTimeout != null) {
+                _call.setTimeout(super.cachedTimeout);
+            }
+            if (super.cachedPortName != null) {
+                _call.setPortName(super.cachedPortName);
+            }
+            java.util.Enumeration keys = super.cachedProperties.keys();
+            while (keys.hasMoreElements()) {
+                java.lang.String key = (java.lang.String) keys.nextElement();
+                _call.setProperty(key, super.cachedProperties.get(key));
+            }
+            // All the type mapping information is registered
+            // when the first call is made.
+            // The type mapping information is actually registered in
+            // the TypeMappingRegistry of the service, which
+            // is the reason why registration is only needed for the first call.
+            synchronized (this) {
+                if (firstCall()) {
+                    // must set encoding style before registering serializers
+                    _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+                    _call.setEncodingStyle(org.apache.axis.Constants.URI_SOAP11_ENC);
+                    for (int i = 0; i < cachedSerFactories.size(); ++i) {
+                        java.lang.Class cls = (java.lang.Class) cachedSerClasses.get(i);
+                        javax.xml.namespace.QName qName =
+                                (javax.xml.namespace.QName) cachedSerQNames.get(i);
+                        java.lang.Object x = cachedSerFactories.get(i);
+                        if (x instanceof Class) {
+                            java.lang.Class sf = (java.lang.Class)
+                                 cachedSerFactories.get(i);
+                            java.lang.Class df = (java.lang.Class)
+                                 cachedDeserFactories.get(i);
+                            _call.registerTypeMapping(cls, qName, sf, df, false);
+                        }
+                        else if (x instanceof javax.xml.rpc.encoding.SerializerFactory) {
+                            org.apache.axis.encoding.SerializerFactory sf = (org.apache.axis.encoding.SerializerFactory)
+                                 cachedSerFactories.get(i);
+                            org.apache.axis.encoding.DeserializerFactory df = (org.apache.axis.encoding.DeserializerFactory)
+                                 cachedDeserFactories.get(i);
+                            _call.registerTypeMapping(cls, qName, sf, df, false);
+                        }
+                    }
+                }
+            }
+            return _call;
+        }
+        catch (java.lang.Throwable _t) {
+            throw new org.apache.axis.AxisFault("Failure trying to get the Call object", _t);
+        }
+    }
+
+    public void main(java.lang.String[] args) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[0]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "main"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {args});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        extractAttachments(_call);
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public LogoutRetVO logout(LogoutVO lpvo) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[1]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "logout"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {lpvo});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (LogoutRetVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (LogoutRetVO) org.apache.axis.utils.JavaUtils.convert(_resp, LogoutRetVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public LoginRetVO login(LoginVO loginvo) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[2]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "Login"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {loginvo});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (LoginRetVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (LoginRetVO) org.apache.axis.utils.JavaUtils.convert(_resp, LoginRetVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public GeneratePayNoteRetVO generatePayNote(GeneratePayNoteVO gpnvo) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[3]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "generatePayNote"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {gpnvo});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (GeneratePayNoteRetVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (GeneratePayNoteRetVO) org.apache.axis.utils.JavaUtils.convert(_resp, GeneratePayNoteRetVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public GeneratePayNoteRetVO generatePayNoteCG(GeneratePayNoteCGVO gpnvo) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[4]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "generatePayNoteCG"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {gpnvo});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (GeneratePayNoteRetVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (GeneratePayNoteRetVO) org.apache.axis.utils.JavaUtils.convert(_resp, GeneratePayNoteRetVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public GeneratePayNoteRetVO generatePayNoteGt(GeneratePayNoteGTVO gpngtvo) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[5]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "generatePayNoteGt"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {gpngtvo});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (GeneratePayNoteRetVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (GeneratePayNoteRetVO) org.apache.axis.utils.JavaUtils.convert(_resp, GeneratePayNoteRetVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public CancelPayNoteRetVO cancelPayNote(CancelPayNoteVO cpnvo) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[6]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "cancelPayNote"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {cpnvo});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (CancelPayNoteRetVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (CancelPayNoteRetVO) org.apache.axis.utils.JavaUtils.convert(_resp, CancelPayNoteRetVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public SearchPayNoteRetVO searchPayNote(SearchPayNoteVO spnvo) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[7]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "searchPayNote"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {spnvo});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (SearchPayNoteRetVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (SearchPayNoteRetVO) org.apache.axis.utils.JavaUtils.convert(_resp, SearchPayNoteRetVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public SearchPayNoteRetVO searchPnnos(SearchPayNoteVO spnvo) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[8]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "searchPnnos"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {spnvo});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (SearchPayNoteRetVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (SearchPayNoteRetVO) org.apache.axis.utils.JavaUtils.convert(_resp, SearchPayNoteRetVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public CancelReceiptStockRetVO cancelReceiptStock(CancelReceiptStockVO crsvo) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[9]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "cancelReceiptStock"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {crsvo});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (CancelReceiptStockRetVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (CancelReceiptStockRetVO) org.apache.axis.utils.JavaUtils.convert(_resp, CancelReceiptStockRetVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public GenerateReceiptStockRetVO generateReceiptStock(GenerateReceiptStockVO grsvo) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[10]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "generateReceiptStock"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {grsvo});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (GenerateReceiptStockRetVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (GenerateReceiptStockRetVO) org.apache.axis.utils.JavaUtils.convert(_resp, GenerateReceiptStockRetVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public SendReceiptInfoRetVO sendReceiptInfo(SendReceiptInfoVO srivo) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[11]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "sendReceiptInfo"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {srivo});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (SendReceiptInfoRetVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (SendReceiptInfoRetVO) org.apache.axis.utils.JavaUtils.convert(_resp, SendReceiptInfoRetVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public GenerateReceiptIssueRetVO generateReceiptIssue(GenerateReceiptIssueVO griv) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[12]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "generateReceiptIssue"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {griv});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (GenerateReceiptIssueRetVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (GenerateReceiptIssueRetVO) org.apache.axis.utils.JavaUtils.convert(_resp, GenerateReceiptIssueRetVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public SearchReceiptRetVO printReceiptByGt(PayNoteVO payNoteVO) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[13]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "printReceiptByGt"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {payNoteVO});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (SearchReceiptRetVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (SearchReceiptRetVO) org.apache.axis.utils.JavaUtils.convert(_resp, SearchReceiptRetVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public ChangeReciptRstVO changeReceiptByGt(ChangeReceiptVO changeReceiptVO) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[14]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "changeReceiptByGt"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {changeReceiptVO});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (ChangeReciptRstVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (ChangeReciptRstVO) org.apache.axis.utils.JavaUtils.convert(_resp, ChangeReciptRstVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public CancelReciptRstVO cancelReceiptByGt(CancelReciptVO cancelReciptVO) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[15]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "cancelReceiptByGt"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {cancelReciptVO});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (CancelReciptRstVO) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (CancelReciptRstVO) org.apache.axis.utils.JavaUtils.convert(_resp, CancelReciptRstVO.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.lang.String receiptStockXml(java.lang.String xml) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[16]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "receiptStockXml"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {xml});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+
+ public java.lang.String receiptStockUserXml(java.lang.String xml) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[17]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "receiptStockUserXml"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {xml});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.lang.String receiptDisableXml(java.lang.String xml) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[18]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "receiptDisableXml"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {xml});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+
+    public java.lang.String batchVoidReceipt(java.lang.String xml) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[19]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("");
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://face.webservices.gfmis.todaytech.com", "batchVoidReceipt"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {xml});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+}

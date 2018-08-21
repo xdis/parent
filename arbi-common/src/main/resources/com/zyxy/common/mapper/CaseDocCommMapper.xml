@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyxy.common.mapper.CaseDocCommMapper">
+    <select id="queryLitigantInfo" resultType="com.zyxy.common.vo.doc.CaseDocLitigantVO">
+        SELECT
+        d.PROP_TYPE type,
+        d.PROP_NAME name,
+        CASE WHEN d.SEX = 0 THEN '男' ELSE '女' END sex,
+        d.ETHNIC ethnic,
+        d.BIRTHDAY birthday,
+        d.CARD_ID cardId,
+        d.ADDRESS address,
+        d.CERT_NAME certName,
+        d.CERT_DUTIES certDuties
+        FROM
+        <!--本请求-->
+        <if test="requestType == '0'.toString()">
+            <if test="litigantType == '0'.toString()">
+                case_proposer d
+            </if>
+            <if test="litigantType == '1'.toString()">
+                case_defendant d
+            </if>
+        </if>
+        <!--反请求-->
+        <if test="requestType == '1'.toString()">
+            <if test="litigantType == '0'.toString()">
+                case_defendant d
+            </if>
+            <if test="litigantType == '1'.toString()">
+                case_proposer d
+            </if>
+        </if>
+        WHERE
+        d.case_id = #{caseId}
+    </select>
+    <select id="queryAgentInfo" resultType="com.zyxy.common.vo.doc.CaseDocAgentVO">
+        SELECT
+        f.type type,
+        f.name name,
+        CASE WHEN u.sex = 0 THEN '男' ELSE '女' END sex,
+        f.ethnic ethnic,
+        f.birthday birthday,
+        f.card_id cardId,
+        f.address address,
+        f.cert_name certName,
+        f.cert_duties certDuties,
+        f.VOCATION
+        FROM
+        case_agent d,
+        litigant_info f,
+        user_info u
+        WHERE
+        d.case_id = #{caseId}
+        <!--本请求-->
+        <if test="requestType == '0'.toString()">
+            AND d.litigant_type = #{litigantType}
+        </if>
+        <!--反请求-->
+        <if test="requestType == '1'.toString()">
+            <if test="litigantType == '0'.toString()">
+                AND d.litigant_type = '1'
+            </if>
+            <if test="litigantType == '1'.toString()">
+                AND d.litigant_type = '0'
+            </if>
+        </if>
+        AND f.user_id = d.agent_id
+        AND u.id = d.agent_id
+    </select>
+</mapper>

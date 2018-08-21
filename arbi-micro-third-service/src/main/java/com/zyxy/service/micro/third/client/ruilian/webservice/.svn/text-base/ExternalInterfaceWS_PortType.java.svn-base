@@ -1,0 +1,30 @@
+/**
+ * ExternalInterfaceWS_PortType.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ */
+
+package com.todaytech.gfmis.receipt.facade.shixiancline;
+
+public interface ExternalInterfaceWS_PortType extends java.rmi.Remote {
+    public void main(java.lang.String[] args) throws java.rmi.RemoteException;
+    public LogoutRetVO logout(LogoutVO lpvo) throws java.rmi.RemoteException;
+    public LoginRetVO login(LoginVO loginvo) throws java.rmi.RemoteException;
+    public GeneratePayNoteRetVO generatePayNote(GeneratePayNoteVO gpnvo) throws java.rmi.RemoteException;
+    public GeneratePayNoteRetVO generatePayNoteCG(GeneratePayNoteCGVO gpnvo) throws java.rmi.RemoteException;
+    public GeneratePayNoteRetVO generatePayNoteGt(GeneratePayNoteGTVO gpngtvo) throws java.rmi.RemoteException;
+    public CancelPayNoteRetVO cancelPayNote(CancelPayNoteVO cpnvo) throws java.rmi.RemoteException;
+    public SearchPayNoteRetVO searchPayNote(SearchPayNoteVO spnvo) throws java.rmi.RemoteException;
+    public SearchPayNoteRetVO searchPnnos(SearchPayNoteVO spnvo) throws java.rmi.RemoteException;
+    public CancelReceiptStockRetVO cancelReceiptStock(CancelReceiptStockVO crsvo) throws java.rmi.RemoteException;
+    public GenerateReceiptStockRetVO generateReceiptStock(GenerateReceiptStockVO grsvo) throws java.rmi.RemoteException;
+    public SendReceiptInfoRetVO sendReceiptInfo(SendReceiptInfoVO srivo) throws java.rmi.RemoteException;
+    public GenerateReceiptIssueRetVO generateReceiptIssue(GenerateReceiptIssueVO griv) throws java.rmi.RemoteException;
+    public SearchReceiptRetVO printReceiptByGt(PayNoteVO payNoteVO) throws java.rmi.RemoteException;
+    public ChangeReciptRstVO changeReceiptByGt(ChangeReceiptVO changeReceiptVO) throws java.rmi.RemoteException;
+    public CancelReciptRstVO cancelReceiptByGt(CancelReciptVO cancelReciptVO) throws java.rmi.RemoteException;
+    public java.lang.String receiptStockXml(java.lang.String xml) throws java.rmi.RemoteException;
+    public java.lang.String receiptStockUserXml(java.lang.String xml) throws java.rmi.RemoteException;
+    public java.lang.String receiptDisableXml(java.lang.String xml) throws java.rmi.RemoteException;
+}

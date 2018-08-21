@@ -1,0 +1,54 @@
+.numberCount {
+	background: #fff;
+	padding: 30px 45px;
+}
+.numberCount-p {
+	font-size: 14px;
+	color: #999;
+	height: 50px;
+	line-height: 50px;
+}
+.numberCount .icon-home {
+	font-size: 20px;
+	color: #333;
+}
+.numberCount  {
+	font-size: 18px;
+	color: #6b6e91;
+}
+.numberCount .numberCount-title {
+
+}
+.numberCount-box .num-list li{
+	height: 100px;
+	width: 300px;
+	background: #f8f9fd;
+	float: left;
+	margin-right: 20px;
+	padding: 20px 45px;
+
+}
+.numberCount-box .num-list li span{
+	display: block;
+	text-align: center;
+	line-height: 30px;
+	color: #323234;
+}
+.numberCount-box .num-list li .num{
+	font-size: 24px;
+}
+.numberCount-box .num-list li .text{
+	font-size: 14px;
+	color: #8a8a8c;
+}
+.choosetime {
+	font-size: 16px;
+	color: #333;
+}
+.choosemonth {
+	height: 30px;
+	line-height: 30px;
+	width: 200px;
+	border: 1px solid #e9e9e9;
+	margin-left: 50px;
+}

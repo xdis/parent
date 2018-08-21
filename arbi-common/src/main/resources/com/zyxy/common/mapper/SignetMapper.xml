@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyxy.common.mapper.SignetMapper">
+    <select id="querySignatoryByUserIds" resultType="com.zyxy.common.dto.SignatoryDTO">
+        SELECT
+        u.NAME fullName,
+        CASE WHEN l.TYPE = 0
+        THEN 1
+        ELSE 11 END identityTypeCode,
+        CASE WHEN l.TYPE = 0
+        THEN l.card_id
+        ELSE l.unified_social_code END identityCard,
+        u.PHONE mobile,
+        u.EMAIL email,
+        '1' noNeedVerify
+        FROM
+        user_info u,
+        litigant_info l
+        WHERE
+        u.id IN (
+        <foreach collection="userIds" separator="," item="str" index="i">
+            #{str}
+        </foreach>
+        )
+        AND l.USER_ID = u.ID
+    </select>
+</mapper>

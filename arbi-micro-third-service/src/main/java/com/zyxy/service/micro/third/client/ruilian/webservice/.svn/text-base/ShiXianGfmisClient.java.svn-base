@@ -1,0 +1,77 @@
+package com.todaytech.gfmis.receipt.facade.shixiancline;
+
+import com.todaytech.framework.exception.FatalBizException;
+
+import javax.xml.rpc.ServiceException;
+import java.rmi.RemoteException;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: Administrator
+ * Date: 14-8-4
+ * Time: 下午4:24
+ * To change this template use File | Settings | File Templates.
+ */
+public class ShiXianGfmisClient {
+
+     private ExternalInterfaceWSSoapBindingStub service;
+    public LoginRetVO login(String wscWsUsername,String wsPassword,String address) throws FatalBizException {
+        LoginVO loginVO1 = new LoginVO();
+        loginVO1.setUnitNO(wscWsUsername);
+        loginVO1.setPassword(wsPassword);
+        try {
+            LoginRetVO loginRetVO = getService(address).login(loginVO1);
+
+            return loginRetVO;
+        } catch (RemoteException e) {
+            throw new FatalBizException("非税webservice接口连接出错");
+        }
+    }
+
+    public String receiptInstore(String xml) throws FatalBizException {
+        try {
+            return service.receiptStockXml(xml);
+        } catch (RemoteException e) {
+            throw new FatalBizException("非税webservice接口连接出错");
+        }
+    }
+
+    public String receiptStockUserXml(String xml) throws FatalBizException {
+        try {
+            return service.receiptStockUserXml(xml);
+        } catch (RemoteException e) {
+            throw new FatalBizException("非税webservice接口连接出错");
+        }
+    }
+
+    public String receiptDisableXml(String xml) throws FatalBizException {
+        try {
+            return service.receiptDisableXml(xml);
+        } catch (RemoteException e) {
+            throw new FatalBizException("非税webservice接口连接出错");
+        }
+    }
+
+    public String batchVoidReceipt(String xml) throws FatalBizException {
+        try {
+            return service.batchVoidReceipt(xml);
+        } catch (RemoteException e) {
+            throw new FatalBizException("非税webservice接口连接出错");
+        }
+    }
+
+    public ExternalInterfaceWSSoapBindingStub getService(String address) throws FatalBizException {
+        if (service == null) {
+            ExternalInterfaceWSServiceLocator locator = new ExternalInterfaceWSServiceLocator();
+            locator.setExternalInterfaceWSEndpointAddress(address);
+            locator.setMaintainSession(true);
+            try {
+                service = (ExternalInterfaceWSSoapBindingStub) locator.getExternalInterfaceWS();
+            } catch (ServiceException e) {
+                e.printStackTrace();
+                throw new FatalBizException("非税webservice接口连接出错");
+            }
+        }
+        return service;
+    }
+}

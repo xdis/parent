@@ -1,0 +1,159 @@
+.pages {
+	width: 100%;
+	height: 42px;
+	float: rigth;
+	margin: 25px auto;
+}
+
+.pages #Pagination {
+	float: left;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.pmain {
+	width: 900px;
+	margin: 25px auto;
+}
+
+.pagination {
+	height: 42px;
+	text-align: center;
+	font-family: \u5b8b\u4f53, Arial;
+}
+
+.pagination a,.pagination span {
+	display: inline-block;
+	vertical-align: middle;
+	height: 40px;
+	width: 42px;
+	line-height: 38px;
+	margin: 0 3px;
+	border: 1px solid #eee;
+	font-size: 14px;
+	color: #666;
+	background: #fff;
+	line-height: 38px;
+}
+
+.pagination  a:hover,.pagination span:hover
+	{
+	background-color: #ffb50a;
+	border-color: #ffb50a;
+	color: #ffffff;
+}
+
+.pagination .current {
+	background-color: #ffb50a;
+	border-color: #ffb50a;
+	color: #ffffff;
+}
+
+.pagination .prev, .pagination .next {
+	color: #bbb;
+	background: #f3f3f3;
+	border: 1px solid #e6e6e6;
+	width: 95px;
+}
+
+.pagination .prev i {
+	margin-right: 8px;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-right: 5px solid #b9b5b5;
+	border-top: 5px solid transparent;
+	border-left: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+}
+
+.pagination .next i {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 8px;
+	margin-right: 0;
+	border-right: 5px solid transparent;
+	border-top: 5px solid transparent;
+	border-left: 5px solid #b9b5b5;
+	border-bottom: 5px solid transparent;
+}
+
+.pagination .prev i {
+	background-position: -144px -1px;
+	*background-position: -144px -4px;
+	font-size: 12px;
+}
+
+.pagination .next i {
+	background-position: -156px -1px;
+	*background-position: -156px -4px;
+}
+
+/* line 86, ../../src/scss/components/_page.scss */
+.pagination  .prev:hover i {
+	border-right: 5px solid #fff;
+}
+/* line 91, ../../src/scss/components/_page.scss */
+.pagination  .next:hover i {
+	border-left: 5px solid #fff;
+}
+
+.pagination .pagination-break {
+	border-left: 1px solid #e6e6e6;
+	background: none;
+	cursor: default;
+}
+
+.pages .searchPage {
+	float: left;
+	line-height: 40px;
+}
+
+.searchPage .page-sum {
+	padding: 11px 13px;
+	color: #999999;
+	font-family: \u5b8b\u4f53, Arial;
+	font-size: 14px;
+}
+
+.searchPage .page-go {
+	padding: 8px 0;
+	color: #999999;
+	font-family: \u5b8b\u4f53, Arial;
+	font-size: 14px;
+	padding: 10px 0\9;
+	*padding: 6px 0;
+}
+
+.searchPage .page-go input {
+	width: 60px;
+	height: 42px;
+	margin: 0 10px;
+	padding-left: 5px;
+	border: 1px solid #e4e4e4;
+	color:#999999;
+}
+
+.searchPage .page-btn {
+	display: block;
+	float: right;
+	vertical-align: middle;
+	height: 40px;
+	line-height: 38px;
+	padding: 0 16px;
+	margin: 0 10px;
+	border: 1px solid #eee;
+	font-size: 14px;
+	color: #999999;
+	background: #fff;
+	font-family: Arial, 'Microsoft YaHei';
+	font-size: 14px;
+	text-decoration: none;
+}
+
+.searchPage a:hover {
+	background-color: #ffb50a !important;
+	border-color: #ffb50a !important;
+	color: #ffffff !important;
+}

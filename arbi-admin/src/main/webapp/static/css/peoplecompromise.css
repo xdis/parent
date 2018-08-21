@@ -1,0 +1,114 @@
+/*当事人和解*/
+.z-room{
+    width:100%;
+    height:585px;
+    background: #FAFAFA;
+    border: 1px solid #C7C7C7;
+    border-radius: 4px;
+}
+.z-textarea{
+    width:100%;
+    height:122px;
+    background: #fff;
+    position:relative;
+}
+.z-textarea textarea{
+    width:100%;
+    height:100%;
+    border:none;
+    padding: 16px 120px 16px 15px;
+}
+.z-textarea button{
+    width:90px;
+    height:90px;
+    position:absolute;
+    background: #47599E;
+    border-radius: 4px;
+    right:15px;
+    top:15px;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+}
+.text-room{
+    width:100%;
+    height:460px;
+    border-bottom: 1px solid #C7C7C7;
+    box-sizing: border-box;
+    padding: 26px ;
+    overflow: auto;
+}
+
+.z-shenback{
+    width:294px;
+    height:28px;
+    border: 1px solid #47599E;
+    border-radius: 4px;
+    margin:60px auto;
+    display: block;
+    background: #fff;
+    font-size: 12px;
+    color: #47599E;
+    line-height: 18px;
+}
+.z-text-box{
+    margin-top:28px;
+}
+.z-text-p{
+    font-size: 12px;
+    color: #888888;
+    letter-spacing: 0;
+}
+
+.z-text{
+    margin-top:8px;
+    width:620px;
+    background: #FFFFFF;
+    border: 1px solid #9EA9D3;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #333333;
+    letter-spacing: 0;
+    padding:17px;
+    box-sizing: border-box;
+    line-height: 18px;
+}
+
+.say-text-box .z-text{
+    background: #f1f4ff;
+}
+/*当事人和解1*/
+.compromise-list{
+    border: 1px solid #dfdfdf;
+    padding: 20px;
+}
+.compromise-list-p {
+    border: 1px solid #dfdfdf;
+    height: 63px;
+    width: 100%;
+    font-size: 12px;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.com-i{
+    border:1px solid #dfdfdf;
+    height: 8px;
+    width: 8px;
+    border-radius: 5px;
+    display: inline-block;
+
+}
+.com-time {
+    color: #999;
+    padding: 0 10px;
+}
+.com-content {
+    color: #151515;
+}
+.con-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

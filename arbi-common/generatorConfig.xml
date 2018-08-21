@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" 
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"> 
+<generatorConfiguration> 
+    <classPathEntry location="E:\maven\mysql\mysql-connector-java\5.1.44\mysql-connector-java-5.1.44.jar"/>
+
+    <context id="arbiTables" targetRuntime="MyBatis3">
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+        <!-- 注释 -->
+        <commentGenerator >
+            <property name="suppressAllComments" value="false"/><!-- 是否取消注释 -->  
+            <property name="suppressDate" value="true" /> <!-- 是否生成注释代时间戳--> 
+            <property name="addRemarkComments" value="true" /> 
+            <property name="author" value="jax" />
+        </commentGenerator>    
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.2.13:3306/arbi?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;allowMultiQueries=true" userId="root" password="root">
+            <property name="remarksReporting" value="true"/>
+            <property name="useInformationSchema" value="true"/>
+        </jdbcConnection> 
+        <javaTypeResolver> 
+            <property name="forceBigDecimals" value="false"/> 
+        </javaTypeResolver> 
+        <javaModelGenerator targetPackage="com.zyxy.common.domain" targetProject="arbi-common\src\main\java"> 
+            <property name="enableSubPackages" value="false"/> 
+            <property name="trimStrings" value="true"/> 
+        </javaModelGenerator> 
+        <sqlMapGenerator targetPackage="com.zyxy.common.mapper" targetProject="arbi-common\src\main\resources"> 
+            <property name="enableSubPackages" value="false"/> 
+        </sqlMapGenerator> 
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zyxy.common.mapper" targetProject="arbi-common\src\main\java">
+            <property name="enableSubPackages" value="false"/> 
+        </javaClientGenerator>
+        
+        <!--<table schema="" tableName="sys_user" domainObjectName="SysUser">
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="sys_file" domainObjectName="SysFile">
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="sms_record" domainObjectName="SmsRecord"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="mail_record" domainObjectName="MailRecord"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="pay_order" domainObjectName="PayOrder"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="pay_rl_co" domainObjectName="PayRLCo"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="pay_rl_items" domainObjectName="PayRLItems"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="sys_data_dic" domainObjectName="SysDataDic"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="sys_sequence" domainObjectName="SysSequence"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="real_name_auth_record" domainObjectName="RealNameAuthRecord">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        
+        &lt;!&ndash; 与电子签名相关 &ndash;&gt;
+        <table schema="" tableName="sign_signet_log" domainObjectName="SignSignetLog">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="sign_signature_log" domainObjectName="SignSignatureLog">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        
+        &lt;!&ndash; 与争议平台API相关 &ndash;&gt;
+        <table schema="" tableName="api_org_cert" domainObjectName="ApiOrgCert">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="api_orgnazation" domainObjectName="ApiOrgnazation">
+            <property name="useActualColumnNames" value="false"/>
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        
+        &lt;!&ndash; 角色资源相关表 &ndash;&gt;
+        <table schema="" tableName="sys_resource" domainObjectName="SysResource"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="sys_role" domainObjectName="SysRole"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        
+        
+        <table schema="" tableName="case_mat" domainObjectName="CaseMat"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="case_doc" domainObjectName="CaseDoc"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>-->
+        <table schema="arbi" tableName="case_cancel_process_record" domainObjectName="CaseCancelProcessRecord">
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="arbi" tableName="case_juris_dis_process_record" domainObjectName="CaseJurisDisProcessRecord">
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <!-- 系统核心业务表
+        <table schema="" tableName="arbitrator_info" domainObjectName="ArbitratorInfo"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="case_arbitrator" domainObjectName="CaseArbitrator"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="case_classify" domainObjectName="CaseClassify"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="case_defendant" domainObjectName="CaseDefendant"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="case_doc" domainObjectName="CaseDoc"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="case_doc" domainObjectName="CaseEval"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="case_info" domainObjectName="CaseInfo"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="case_info" domainObjectName="CaseMat"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="case_node" domainObjectName="CaseNode"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="case_proposer" domainObjectName="CaseProposer"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="case_time_set" domainObjectName="CaseTimeSet"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="litigant_agent" domainObjectName="LitigantAgent"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="litigant_info" domainObjectName="LitigantInfo"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="manager_info" domainObjectName="ManagerInfo"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="message_record" domainObjectName="MessageRecord"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="message_user" domainObjectName="MessageUser"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+        <table schema="" tableName="user_info" domainObjectName="UserInfo"> 
+            <property name="useActualColumnNames" value="false"/> 
+            <property name="ignoreQualifiersAtRuntime" value="true"/>
+        </table>
+         -->
+        
+    </context>
+</generatorConfiguration> 

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zyxy.common.mapper.ArbitrationCaseHandleMapper">
+  <!-- 查询仲裁员撤案申请书内容 -->
+  <select resultType="com.zyxy.common.vo.ArbitrationCaseWithdrawApplyVO" id="queryCaseWithdrawApplyContent">
+  	SELECT
+  		cp.prop_name applicantName,
+  		cp.sex applicantSex,
+  		cp.card_id applicantIdCard,
+  		cp.address applicantAddress,
+  		cd.prop_name defendantName,
+  		cd.sex defendantSex,
+  		cd.card_id defendantIdCard,
+  		cd.address defendantAddress,
+  		wr.application application,
+  		wr.fact fact,
+  		wr.reason reason,
+  		wr.create_time applyTime,
+  		cri.request_type requestType,
+  		cri.arb_claim arbClaim,
+  		ci.case_type_id caseType
+  	FROM
+  		withdraw_record wr
+  		LEFT JOIN
+  			case_request_info cri
+  			ON 
+  				cri.id=wr.request_id
+  		LEFT JOIN
+  			case_proposer cp
+  			ON
+  				wr.case_id=cp.case_id
+  		LEFT JOIN
+  			case_defendant cd
+  			ON 
+  				wr.case_id=cd.case_id
+  		LEFT JOIN
+  			case_info ci
+  			ON
+  				ci.id=cd.case_id
+	WHERE
+		wr.case_id=#{caseId}
+  </select>
+  
+  <!-- 查询仲裁委撤案决定书内容 -->
+  <select id="queryCaseDecisionContent" resultType="com.zyxy.common.vo.ArbitrationCaseDecisionVO">
+  	SELECT
+  		cd.doc_year_number docYearNo,
+  		cd.doc_serial_number docSerialNo,
+  		cp.prop_name applicantName,
+  		cp.prop_type applicantType,
+  		cp.address applicantAddress,
+  		cp.cert_name applicantCorporation,
+  		applicantAttorneyInfo.name applicantAttorneyName,
+  		applicantAttorneyInfo.vocation applicantAttorneyVocation,
+  		cdf.prop_name respondentName,
+  		cdf.address respondentAddress,
+  		cdf.prop_type respondentType,
+  		cdf.cert_name respondentCorporation,
+  		cdc.create_time decisionWriteTime,
+  		ui.name arbitrationSecretaryName,
+  		arbitrator.name arbitratorName
+  	FROM
+  		case_doc cd
+  		LEFT JOIN
+  			case_proposer cp
+  			ON
+  				cp.case_id=cd.case_id
+  		LEFT JOIN
+  			(SELECT 
+  				ca.case_id id,li.name name,li.vocation vocation 
+  			 FROM 
+  			 	litigant_info li 
+  			 LEFT JOIN
+  			 	case_agent ca 
+			 	ON
+	 			 	li.user_id=ca.agent_id
+					AND
+					ca.litigant_type='0'
+  			) applicantAttorneyInfo
+  				ON 
+  					applicantAttorneyInfo.id=cd.case_id
+		LEFT JOIN
+			case_defendant cdf
+			ON
+				cdf.case_id=cd.case_id
+		LEFT JOIN
+			case_doc_content cdc
+			ON
+				cdc.doc_id=cd.id
+		LEFT JOIN
+			manager_info mi
+			ON
+				mi.id=cdc.secretary_id
+		LEFT JOIN
+			user_info ui
+			ON
+				mi.user_id=ui.id
+		LEFT JOIN 
+			(SELECT
+				u.name name,cdct.arbitrator_id arbiId,cdct.doc_id docId
+			 FROM
+			 	user_info u
+			 LEFT JOIN
+			 	arbitrator_info ai
+			 	ON
+			 		ai.user_id=u.id
+			 LEFT JOIN
+			 	case_doc_content cdct
+			 ON
+			 	ai.id=cdct.arbitrator_id
+			) arbitrator
+			ON
+				arbitrator.arbiId=cdc.arbitrator_id
+				AND
+				cd.id=arbitrator.docId
+  	WHERE
+  		cd.doc_type='0'
+  		AND
+  		cd.case_id=#{caseId}
+  </select>
+  
+  <!-- 查询仲裁委撤案意见 -->
+  <select id="queryCaseArbitrationSuggestion" resultType="com.zyxy.common.vo.ArbitrationCaseAuditOpinionVO">
+  	SELECT
+  		cas.approve_suggest suggest,
+  		ca.approve_content content,
+  		ca.create_time suggestTime,
+  		mi.duties identify
+  	FROM
+  		case_approve_suggest cas
+  		LEFT JOIN
+  			case_approve ca
+  			ON
+  				ca.id=cas.approve_id
+  		LEFT JOIN
+  			manager_info mi
+  			ON
+  				mi.user_id=approve_user_id
+  	WHERE
+  		ca.approve_type='8'
+  		AND
+  		ca.case_id=#{caseId}
+  </select>
+  
+  <select id="queryDutiesById" resultType="java.lang.String">
+  	SELECT
+  		duties
+  	FROM
+  		manager_info
+  	WHERE
+  		user_id=#{userId}
+  </select>
+  
+  <select id="queryRequestTypeByCaseIdUserId" resultType="java.lang.String" parameterType="com.zyxy.common.dto.ArbitrationCaseDecisionHandleDTO">
+  	SELECT
+  		cri.request_type
+  	FROM
+  		case_request_info cri
+  	WHERE
+  		cri.case_id=#{dto.caseId}
+  		AND
+  		cri.creater_id=#{dto.userId}
+  </select>
+  
+  <select id="queryArbitratorIdByCaseId" resultType="java.lang.String">
+  	SELECT
+  		ca.arbitrator_id
+  	FROM
+  		case_arbitrator ca
+  	WHERE
+  		ca.status='2'
+  		AND
+  		ca.case_id=#{caseId}
+  </select>
+  
+  <select id="queryCaseDocId" resultType="java.lang.String">
+  	SELECT
+  		cd.id
+  	FROM
+  		case_doc cd
+  	WHERE
+  		cd.doc_type='0'
+  		AND
+  		cd.case_id=#{caseId}
+  </select>
+  
+  <select id="queryArbitrationSecretaryByCaseId" resultType="java.lang.String">
+  	SELECT
+  		cm.manager_id
+  	FROM
+  		case_manager cm
+  	WHERE
+  		cm.manager_type=2 /**仲裁秘书**/
+  		AND
+  		cm.case_id=#{caseId}
+  
+  </select>
+</mapper>
